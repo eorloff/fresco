@@ -34,8 +34,16 @@ The initial version, released 2015-11-30.
 
 This is a planned future release. We plan to include:
 
-* A protocol suite that uses the 2PC protocol in SCAPI.
+* Implementation of the boolean TinyTables protocol suite. 
 
-* A persistent storage alternative to the current MySQL storage, but
-  that is instead based on files and that can efficiently handles very
-  large amounts of preprocessed data.
+* A 'fuelstation' for SPDZ preprocessed material which an independent third
+  party can run. For the two-party setup, this will provide the same security
+  guarantees.
+
+* Improvements to the standard library:
+
+  * The symmetric encryption cipher MIMC
+
+  * Statistical functionalities such as covariance.
+
+  * Division

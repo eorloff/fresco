@@ -14,6 +14,11 @@ the secure computation that is found in FRESCO.
            Multiparty Computation and Secret Sharing. Cambridge
            University Press 2010, ISBN 978-11007043053.
 
+.. [DNNR16] Damgård, I., Nielsen, J. B., Nielsen, M., &
+            Ranellucci, S. (2016). Gate-scrambling revisited-or: The tinytable
+            protocol for 2-party secure computation. Cryptology ePrint Archive,
+            Report 2016/695, 2016. http://eprint. iacr. org/2016/695.
+	   
 .. [DPSZ12] Ivan Damgaard, Valerio Pastro, Nigel P. Smart, Sarah
             Zakarias: Multiparty Computation from Somewhat Homomorphic
             Encryption. CRYPTO 2012: 643-662.

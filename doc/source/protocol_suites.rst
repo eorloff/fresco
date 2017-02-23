@@ -15,6 +15,7 @@ The following table gives a rough comparison of the protocol suites.
 Suite	  Parties   Security   Model of Computation   Reactive
 ========= =======  =========== =====================  ========
 DUMMY	  1+	   none	       Boolean 		      yes
+TinyTables	  1+	   malicious	       Boolean 		      yes
 BGW	  3+	   semi-honest Arithmetic 	      yes
 SPDZ	  2+	   malicious   Arithmetic 	      yes
 ========= =======  =========== =====================  ========
@@ -99,6 +100,28 @@ an idea of how much *additional* overhead you introduce in the other
 suite, i.e., how much the extra security costs compared to the basic
 overhead.
 
+.. _TinyTables:
+
+The TinyTables Protocol Suite
+-----------------------------
+
+The TinyTables protocol suites is based on [DNNR16]_. It functions on boolean
+circuits, and works (simplified) by creating a truth table for each gate. A
+running MAC is kept for active security, much like the approach used in SPDZ.
+
+TinyTables provides security against a malicious adversary, and will only work
+for the 2-party case.
+
+The protocol suite works in the :term:`preprocessing model`, and will thus
+require that the parties have communicated before the actual function should be
+evaluated. Furthermore, the actual function to evaluate is also required to be
+known beforehand. 
+
+TinyTables requires communication for each AND gate, which means that the number
+of communication rounds will be equal to the depth of the boolean circuit you want
+to evaluate. This means that it is best suited for wide circuits and low latency
+setups. 
+
 
 .. _BGW:
 
@@ -155,13 +178,16 @@ inputs are known, but where more extensive computation can be done at
 some time before the inputs are known, or where a trusted third party
 is available at some point before the online computation.
 
-.. note:: Currently, only the *online* phase of SPDZ is
-  implemented. FRESCO does, however, contain a method that lets a
-  *trusted* party generate the required offline material which makes
-  it usable in some settings. The full SPDZ protocol includes a
-  protocol that lets the parties obtain the offline material without
-  any trusted party.
+.. note:: Currently, only the *online* phase of SPDZ is implemented. FRESCO
+  does, however, contain a method that lets a *trusted* party generate the
+  required offline material which makes it usable in some settings. Furthermore,
+  FRESCO contains a tool called a "fuelstation" which a third party (who does
+  not need to be fully trusted) can run. In the two party case, the security
+  model will be the same, since at least two parties have to collude to break
+  the security. The full SPDZ protocol includes a protocol that lets the parties
+  obtain the offline material without any third party.
 
+  
 
 ..
     The LR15 Protocol Suite

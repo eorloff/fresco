@@ -18,6 +18,7 @@ fresco@alexandra.dk with any ideas, etc.
 The team of people that are or have been involved in developing FRESCO
 is (ordered alphabetically):
 
+* Jonas Lindstrøm <jonas.lindstrom@alexandra.dk> 
 * Kasper Damgaard <kasper.damgaard@alexandra.dk>
 * Thomas P. Jakobsen <tpj@sepior.dk>
 * Peter S. Nordholt <peter.s.nordholt@alexandra.dk>
@@ -32,7 +33,7 @@ Pull Requests
 
 The easiest way to contribute is to send us a pull request on GitHub:
 
-* Create a fork of the FRESCO master repository at `GitHub
+* Create a fork of the FRESCO develop repository at `GitHub
   <http://github.com/aicis/fresco>`_.
 
 * Make your changes in your forked branch.
@@ -157,7 +158,10 @@ but are included when you run ::
 
   mvn integration-test
 
-
+For eclipse users, there is a class called TestSuite which can be run with JUnit
+from eclipse that should test more or less what 'mvn test' does. Still, be sure
+that mvn runs before committing code. 
+  
 A few good practices regarding tests:
 
 #. Write tests.

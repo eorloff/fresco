@@ -69,7 +69,9 @@ This section contains a description of some of the core concepts in FRESCO.
 
    secure computation engine
 
-      TODO
+      The core of FRESCO. It is the coordinating mind which ensures that all is
+      setup correctly given the configurations of the user. It is also the
+      entry point for developers where applications are run from. 
 
    security parameter
    statistical security parameter
@@ -102,3 +104,8 @@ This section contains a description of some of the core concepts in FRESCO.
       this risk do not grow if the adversary achieves more processing
       power. *Perfect* security is information theoretic security
       where the probability of breaking the protocol is zero.
+
+   honest majority
+
+      Denotes that the majority of parties in a multiparty computation are
+      honest - i.e. they behave as they should according to the protocol.
