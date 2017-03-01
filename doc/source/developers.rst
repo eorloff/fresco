@@ -20,6 +20,7 @@ is (ordered alphabetically):
 
 * Jonas Lindstrøm <jonas.lindstrom@alexandra.dk> 
 * Kasper Damgaard <kasper.damgaard@alexandra.dk>
+* Michael Stausholm <michael.stausholm@alexandra.dk>
 * Thomas P. Jakobsen <tpj@sepior.dk>
 * Peter S. Nordholt <peter.s.nordholt@alexandra.dk>
 * Tomas Toft <ttoft@cs.au.dk>

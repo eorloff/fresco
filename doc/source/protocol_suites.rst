@@ -11,14 +11,14 @@ given suite in a real-world application.
 
 The following table gives a rough comparison of the protocol suites.
 
-========= =======  =========== =====================  ========
-Suite	  Parties   Security   Model of Computation   Reactive
-========= =======  =========== =====================  ========
-DUMMY	  1+	   none	       Boolean 		      yes
-TinyTables	  1+	   malicious	       Boolean 		      yes
-BGW	  3+	   semi-honest Arithmetic 	      yes
-SPDZ	  2+	   malicious   Arithmetic 	      yes
-========= =======  =========== =====================  ========
+========== =======  =========== =====================  ========
+Suite	   Parties   Security   Model of Computation   Reactive
+========== =======  =========== =====================  ========
+DUMMY	   1+	    none	Boolean		       yes
+TinyTables 1+	    malicious   Boolean		       yes
+BGW	   3+	    semi-honest Arithmetic 	       yes
+SPDZ	   2+	    malicious   Arithmetic 	       yes
+========== =======  =========== =====================  ========
 
 ..
   LR15	  2	   malicious   Boolean		      no
@@ -181,13 +181,11 @@ is available at some point before the online computation.
 .. note:: Currently, only the *online* phase of SPDZ is implemented. FRESCO
   does, however, contain a method that lets a *trusted* party generate the
   required offline material which makes it usable in some settings. Furthermore,
-  FRESCO contains a tool called a "fuelstation" which a third party (who does
-  not need to be fully trusted) can run. In the two party case, the security
-  model will be the same, since at least two parties have to collude to break
-  the security. The full SPDZ protocol includes a protocol that lets the parties
-  obtain the offline material without any third party.
-
-  
+  FRESCO contains a tool called a "fuelstation" [Fuel Station]_ which a third
+  party (who does not need to be fully trusted) can run. In the two party case,
+  the security model will be the same, since at least two parties have to
+  collude to break the security. The full SPDZ protocol includes a protocol that
+  lets the parties obtain the offline material without any third party.
 
 ..
     The LR15 Protocol Suite

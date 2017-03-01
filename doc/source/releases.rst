@@ -32,13 +32,14 @@ The initial version, released 2015-11-30.
 0.2
 ---
 
-This is a planned future release. We plan to include:
+This is a planned future release. It should be released ultimo march. We plan to
+include:
 
 * Implementation of the boolean TinyTables protocol suite. 
 
-* A 'fuelstation' for SPDZ preprocessed material which an independent third
-  party can run. For the two-party setup, this will provide the same security
-  guarantees.
+* A :ref:`fuelstation <Fuel Station>` for SPDZ preprocessed material which an
+  independent third party can run. For the two-party setup, this will provide
+  the same security guarantees.
 
 * Improvements to the standard library:
 
@@ -46,4 +47,4 @@ This is a planned future release. We plan to include:
 
   * Statistical functionalities such as covariance.
 
-  * Division
+  * Integer division
