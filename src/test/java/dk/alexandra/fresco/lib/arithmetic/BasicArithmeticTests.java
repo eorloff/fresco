@@ -63,6 +63,54 @@ import dk.alexandra.fresco.lib.math.integer.min.MinInfFracProtocol;
  *
  */
 public class BasicArithmeticTests {
+  
+  public static class TestExp extends TestThreadFactory {
+    @Override
+    public TestThread next(TestThreadConfiguration conf) {
+      return new TestThread() {
+        @Override
+        public void test() throws Exception {
+          TestApplication app = new TestApplication() {
+            
+            private static final long serialVersionUID = 4338818809103728010L;
+            
+            @Override
+            public ProtocolProducer prepareApplication(
+                ProtocolFactory factory) {
+              BasicNumericFactory fac = (BasicNumericFactory) factory;
+              NumericProtocolBuilder npb = new NumericProtocolBuilder(fac);
+              NumericIOBuilder ioBuilder = new NumericIOBuilder(
+                  fac);              
+              BigInteger seven = BigInteger.valueOf(7);
+              BigInteger expRand = (new BigInteger("22393445452342")).mod(fac.getModulus());
+              BigInteger expInv = seven.modInverse(fac.getModulus());
+              BigInteger exp1 = BigInteger.ONE;
+              BigInteger exp0 = BigInteger.ZERO;
+              BigInteger[] exps = new BigInteger[]{expRand, expInv, exp1, exp0};
+              SInt[] zeroes = new SInt[exps.length];
+              SInt value = ioBuilder.input(seven, 1);
+              for (int i = 0; i < exps.length; i++) {
+                BigInteger power = seven.modPow(exps[i], fac.getModulus());
+                SInt sPower = ioBuilder.input(power, 2);
+                SInt temp = npb.exp(value, exps[i]);
+                zeroes[i] = npb.sub(temp, sPower);
+              }
+              ioBuilder.addProtocolProducer(npb.getProtocol());
+              this.outputs = ioBuilder.outputArray(zeroes);
+              ProtocolProducer io = ioBuilder.getProtocol();
+              ProtocolProducer gp = new SequentialProtocolProducer(
+                  io);
+              return gp;
+            }
+          };
+          sce.runApplication(app);
+          for (int i = 0; i < app.getOutputs().length; i++) {
+            Assert.assertEquals(BigInteger.ZERO, app.getOutputs()[i].getValue());
+          }
+        }   
+      };
+    }
+  }   
 
 	public static class TestInput extends TestThreadFactory {
 		@Override
